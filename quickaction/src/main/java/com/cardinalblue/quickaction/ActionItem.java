@@ -6,10 +6,10 @@ import android.graphics.Bitmap;
 /**
  * Action item, displayed as menu with icon and text.
  * 
- * @author Lorensius. W. L. T <lorenz@londatiga.net>
+ * @author Lorensius. W. L. T lorenz@londatiga.net
  * 
  * Contributors:
- * - Kevin Peck <kevinwpeck@gmail.com>
+ * - Kevin Peck kevinwpeck@gmail.com
  *
  */
 public class ActionItem {

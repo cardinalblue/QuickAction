@@ -21,10 +21,9 @@ public class TableQuickAction extends QuickAction {
 
     /**
      * Constructor allowing orientation override
-     *
-     * @param context Context
-     * @param view
-     * @param isBlack
+     * @param context Context.
+     * @param view View
+     * @param isBlack isBlack
      */
     public TableQuickAction(Context context, View view, boolean isBlack) {
         super(context, view);

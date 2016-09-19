@@ -3,13 +3,13 @@
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:name="com.cardinalblue.quickaction.MyApplication"
+        android:name="com.cardinalblue.quickaction.app.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.cardinalblue.quickaction.MainActivity">
+        <activity android:name="com.cardinalblue.quickaction.app.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

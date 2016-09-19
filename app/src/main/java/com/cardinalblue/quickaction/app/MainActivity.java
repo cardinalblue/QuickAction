@@ -1,4 +1,4 @@
-package com.cardinalblue.quickaction;
+package com.cardinalblue.quickaction.app;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+
+import com.cardinalblue.quickaction.ActionItem;
+import com.cardinalblue.quickaction.QuickAction;
+import com.cardinalblue.quickaction.TableQuickAction;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -25,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         final ImageView preview = (ImageView) findViewById(R.id.preview);
-
         findViewById(R.id.btn_01).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

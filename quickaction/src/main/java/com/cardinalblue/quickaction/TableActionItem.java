@@ -33,7 +33,7 @@ public class TableActionItem extends ActionItem {
 
     /**
      * Set row index of this Action Item
-     * @param rowIndex
+     * @param rowIndex rowIndex
      */
     public void setRowIndex(int rowIndex) {
         this.rowIndex = rowIndex;

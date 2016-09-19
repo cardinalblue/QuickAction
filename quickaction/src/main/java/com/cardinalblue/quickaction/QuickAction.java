@@ -2,7 +2,6 @@ package com.cardinalblue.quickaction;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
 
 import android.content.Context;
 import android.graphics.Rect;
@@ -24,17 +23,13 @@ import android.widget.TextView;
 
 import com.cardinalblue.quickaction.views.CustomRelativeLayout;
 
-import bolts.Continuation;
-import bolts.Task;
-
-
 /**
  * QuickAction dialog, shows action list as icon and text like the one in
  * Gallery3D app. Currently supports vertical and horizontal layout.
  *
- * @author Lorensius W. L. T <lorenz@londatiga.net>
- *         Contributors: - Kevin Peck <kevinwpeck@gmail.com>
- *         Contributors: - Prada Hsiung <bear.prada@gmail.com>
+ * @author Lorensius W. L. T lorenz@londatiga.net
+ *         Contributors: - Kevin Peck kevinwpeck@gmail.com
+ *         Contributors: - Prada Hsiung bear.prada@gmail.com
  */
 public class QuickAction implements OnDismissListener {
     protected Context mContext;
@@ -75,6 +70,7 @@ public class QuickAction implements OnDismissListener {
      * Constructor allowing orientation override
      *
      * @param context Context
+     * @param view View
      */
     public QuickAction(Context context, View view) {
         mContext = context;
@@ -225,7 +221,7 @@ public class QuickAction implements OnDismissListener {
     /**
      * Return the position of action item with action id
      *
-     * @param actionId
+     * @param actionId actionId
      * @return position of action item or -1 if not found
      */
     protected int getItemPositionById(final int actionId) {
@@ -418,6 +414,8 @@ public class QuickAction implements OnDismissListener {
      * Set listener for window dismissed. This listener will only be fired if
      * the quick-action dialog is dismissed by clicking outside the dialog or
      * clicking on sticky item.
+     *
+     * @param listener Listener
      */
     public void setOnDismissListener(PopupWindow.OnDismissListener listener) {
         mWindow.setOnDismissListener(this);
@@ -487,23 +485,22 @@ public class QuickAction implements OnDismissListener {
         if (!mWindow.isShowing()) {
             return;
         }
-        Task.callInBackground(new Callable<Void>() {
-            @Override
-            public Void call() throws Exception {
-                Thread.sleep(delayMillis);
-                return null;
-            }
-        }).continueWith(new Continuation<Void, Void>() {
-            @Override
-            public Void then(Task<Void> task) throws Exception {
+//        Task.callInBackground(new Callable<Void>() {
+//            @Override
+//            public Void call() throws Exception {
+//                Thread.sleep(delayMillis);
+//                return null;
+//            }
+//        }).continueWith(new Continuation<Void, Void>() {
+//            @Override
+//            public Void then(Task<Void> task) throws Exception {
                 dismiss(mWindow);
-                return null;
-            }
-        }, Task.UI_THREAD_EXECUTOR);
+//                return null;
+//            }
+//        }, Task.UI_THREAD_EXECUTOR);
     }
 
     /**
-     *
      * @return true if this PopupWindow is showing
      */
     public boolean isShowing() {
