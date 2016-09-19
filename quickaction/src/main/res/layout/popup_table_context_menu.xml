@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.cardinalblue.quickaction.views.CustomRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:background="#000"
+    tools:gravity="center_horizontal" >
+
+    <ImageView
+        style="@style/ContextMenu.Arrow"
+        android:id="@+id/arrow_top"
+        android:layout_marginBottom="-2dp"
+        android:src="@drawable/bg_context_arrow_up" />
+
+    <ScrollView
+        android:id="@+id/scroller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_context_menu"
+        android:padding="8dp"
+        android:fadingEdgeLength="5dip"
+        android:scrollbars="none" >
+        <TableLayout
+            android:id="@+id/table"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+
+    <ImageView
+        style="@style/ContextMenu.Arrow"
+        android:id="@+id/arrow_bottom"
+        android:layout_marginTop="-2dp"
+        android:src="@drawable/bg_context_arrow_dn" />
+
+</com.cardinalblue.quickaction.views.CustomRelativeLayout>

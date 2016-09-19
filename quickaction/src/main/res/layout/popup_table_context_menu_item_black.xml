@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ContextMenu.TableItem" >
+    <ImageView
+        style="@style/ContextMenu.Item.Icon"
+        android:id="@+id/iv_icon" />
+
+    <TextView
+        style="@style/ContextMenu.Item.Text"
+        android:id="@+id/tv_title"
+        android:textColor="@android:color/black"/>
+</LinearLayout>

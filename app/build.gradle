@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+//apply Bugtags plugin
+apply plugin: 'io.bugtags.library.plugin'
+
+//Bugtags plugin configuration
+bugtags {
+    //Configuration for autouploading mapping files
+    appKey "e6323a2516411e775c55f0847033390d"  //your appKey
+    appSecret "APP_SECRET"    //your appSecret appSecret，Only visible by admin
+    mappingUploadEnabled true
+
+    //Configuration for network tracking
+    trackingNetworkEnabled true
+}
+
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+
+    defaultConfig {
+        applicationId "com.cardinalblue.quickaction.app"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            moduleName "tensorflow_demo"
+            abiFilters "armeabi-v7a"
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.parse.bolts:bolts-tasks:1.4.0'
+    compile project(':quickaction')
+
+    compile 'io.bugtags.library:bugtags-lib:latest.integration'
+}
